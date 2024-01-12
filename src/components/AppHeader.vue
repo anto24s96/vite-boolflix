@@ -21,7 +21,7 @@ export default {
             <div class="col-6">
                 <div class="container_searchbar_button text-white d-flex align-items-center justify-content-end">
                     <input class="form-control form-control-lg" type="text" placeholder="Ricerca" id="searchBar" v-model="store.search">
-                    <button type="button" class="btn btn-danger mx-4">SEARCH</button>
+                    <button type="button" class="btn btn-danger mx-4" @click="$emit('perform_Search')">SEARCH</button>
                 </div>
             </div>
         </div>
