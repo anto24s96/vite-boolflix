@@ -7,7 +7,6 @@ export const store = reactive({
 
     arrFilms: [],
     arrSeries: [],
-
     search: '',
 
     founded: false
