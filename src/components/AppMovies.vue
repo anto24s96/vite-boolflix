@@ -34,7 +34,10 @@ export default {
 </script>
 <template lang="">
     <div class="col-3 my-3">
-        <div>
+        <div class="cover_container">
+            <div class="front"></div>
+            <div class="back"></div>
+            <img :src="`https://image.tmdb.org/t/p/w342/${films.poster_path}`" alt="cover" class="copertina">
             <div>{{ films.title }}</div>
             <div>{{ films.original_title }}</div>
             <img :src="flagUrl" alt="films.original_language">
@@ -42,6 +45,4 @@ export default {
         </div>
     </div>
 </template>
-<style lang="">
-    
-</style>
+<style lang="scss" scoped></style>
