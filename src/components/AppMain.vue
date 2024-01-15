@@ -16,9 +16,11 @@ export default {
 }
 </script>
 <template lang="">
-    <div class="container">
-        <MoviesContainer></MoviesContainer>
-    </div>
+    <main>
+        <div class="container">
+            <MoviesContainer></MoviesContainer>
+        </div>
+    </main>
 </template>
 <style lang="">
     

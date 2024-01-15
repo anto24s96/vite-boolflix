@@ -35,7 +35,6 @@ export default {
 <template lang="">
     <div class="col-3 my-3">
         <div>
-            <img :src="`https://image.tmdb.org/t/p/w342/${series.poster_path}`" alt="cover" class="copertina">
             <div>{{ series.name }}</div>
             <div>{{ series.original_name }}</div>
             <img :src="flagUrl" alt="series.original_language">
