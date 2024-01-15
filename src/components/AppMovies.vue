@@ -29,11 +29,18 @@ export default {
                 return `https://flagsapi.com/${this.films.original_language.toUpperCase()}/shiny/24.png`
             }
         }
-    }
+    },
+    methods: {
+        getCover(path) {
+            let imgPath = store.posterPath + path
+            return imgPath
+        }
+    },
 }
 </script>
 <template lang="">
-    <div>
+    <div class="my-3">
+        <img :src="getCover(films.poster_path)" alt="cover_copertina" class="img-fluid">
         <div>{{ films.title }}</div>
         <div>{{ films.original_title }}</div>
         <img :src="flagUrl" alt="films.original_language">

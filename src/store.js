@@ -7,6 +7,7 @@ export const store = reactive({
     arrFilms: [],
     arrSeries: [],
     search: '',
+    posterPath: 'https://image.tmdb.org/t/p/w342',
 
     founded: false
 })
