@@ -18,25 +18,25 @@ export default {
     },
     methods: {
         getMoviesandSeries() {
-            /* IMPORTAZIONE DEI FILM */
-            let apiMovies = store.urlFilms;
+            /* IMPORTAZIONE DEI FILM E SERIE */
+            let moviesGet = store.urlFilms
+            let seriesGet = store.urlSeries
 
-            apiMovies += `${store.apiKey}&query=${store.search}`;
+            if (store.search !== '') {
+                moviesGet += `&query=${store.search}`
+                seriesGet += `&query=${store.search}`
+            }
 
-            axios.get(apiMovies).then((response) => {
-                store.arrFilms = response.data.results;
+            /* CHIAMATA API */
+            axios.get(moviesGet).then((response) => {
+                this.store.arrFilms = response.data.results
                 store.founded = true
-            });
+            })
 
-            /* IMPORTAZIONE DELLE SERIE TV */
-            let apiSeries = store.urlSeries;
-
-            apiSeries += `${store.apiKey}&query=${store.search}`;
-
-            axios.get(apiSeries).then((response) => {
-                store.arrSeries = response.data.results;
+            axios.get(seriesGet).then((response) => {
+                this.store.arrSeries = response.data.results
                 store.founded = true
-            });
+            })
         }
     },
 }

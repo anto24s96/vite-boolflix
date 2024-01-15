@@ -33,13 +33,11 @@ export default {
 }
 </script>
 <template lang="">
-    <div class="col-3 my-3">
-        <div>
-            <div>{{ series.name }}</div>
-            <div>{{ series.original_name }}</div>
-            <img :src="flagUrl" alt="series.original_language">
-            <div>{{ series.vote_average }}</div>
-        </div>
+    <div>
+        <div>{{ series.name }}</div>
+        <div>{{ series.original_name }}</div>
+        <img :src="flagUrl" alt="series.original_language">
+        <div>{{ series.vote_average }}</div>
     </div>
 </template>
 <style lang="">

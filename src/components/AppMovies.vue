@@ -33,7 +33,7 @@ export default {
 }
 </script>
 <template lang="">
-    <div class="col-3 my-3">
+    <div>
         <div>{{ films.title }}</div>
         <div>{{ films.original_title }}</div>
         <img :src="flagUrl" alt="films.original_language">
