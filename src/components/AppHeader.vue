@@ -29,7 +29,7 @@ export default {
             </div>
             <div class="col-6">
                 <div class="container_searchbar_button text-white d-flex align-items-center justify-content-end">
-                    <input class="form-control form-control-lg" type="text" placeholder="Ricerca" id="searchBar" v-model="store.search" @keyup.enter="$emit('perform_Search')">
+                    <input class="form-control form-control-md" type="text" placeholder="Ricerca" id="searchBar" v-model="store.search" @keyup.enter="$emit('perform_Search')">
                     <button type="button" class="btn btn-danger mx-4" @click="$emit('perform_Search')">SEARCH</button>
                 </div>
             </div>
@@ -50,7 +50,7 @@ header {
     }
 
     #searchBar {
-        width: 400px;
+        width: 280px;
     }
 }
 </style>

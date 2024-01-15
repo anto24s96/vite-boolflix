@@ -32,8 +32,14 @@ export default {
     },
     methods: {
         getCover(path) {
-            let imgPath = store.posterPath + path
-            return imgPath
+
+            if (path !== null) {
+                let imgPath = store.posterPath + path
+                return imgPath
+            }
+            else {
+                return 'https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled-1150x647.png'
+            }
         },
         getVote(vote) {
             let reviews = vote.toFixed() / 2
