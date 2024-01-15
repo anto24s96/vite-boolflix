@@ -18,11 +18,11 @@ export default {
 }
 </script>
 <template lang="">
-    <div class="row mt-5">
-        <h2 class="mt-5" v-if="store.founded">Film</h2>
+    <div class="row">
+        <h2 class="mt-5 text-white" v-if="store.arrFilms != 0 ? true : false">Film</h2>
         <AppMovies v-for="films, index in store.arrFilms" :key="index" :films="films"></AppMovies>
 
-        <h2 class="mt-5" v-if="store.founded">Serie Tv</h2>
+        <h2 class="mt-5 text-white" v-if="store.arrSeries != 0 ? true : false">Serie Tv</h2>
         <AppSeries v-for="series, index in store.arrSeries" :key="index" :series="series"></AppSeries>
     </div>
 </template>

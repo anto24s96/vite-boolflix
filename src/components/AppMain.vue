@@ -16,12 +16,9 @@ export default {
 }
 </script>
 <template lang="">
-    <main>
-        <div class="container">
-            <MoviesContainer></MoviesContainer>
-        </div>
+    <main class="container">
+        <MoviesContainer></MoviesContainer>
     </main>
+
 </template>
-<style lang="">
-    
-</style>
+<style lang="scss" scoped></style>

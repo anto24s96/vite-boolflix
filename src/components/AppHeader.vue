@@ -14,13 +14,22 @@ export default {
     <header class="container-fluid px-5 py-4">
         <div class="row align-items-center">
             <div class="col-6">
-                <div class="container_title text-white">
-                    <h2 class="mb-0">BOOLFLIX</h2>
+                <div class="container_title text-white d-flex align-items-center">
+                    <img src="../assets/netflix logo.png" alt="netflix-logo" class="pointer">
+                    <ul class="list-unstyled d-flex mb-0 mx-5">
+                        <li class="me-3 pointer">Home</li>
+                        <li class="me-3 pointer">Serie TV</li>
+                        <li class="me-3 pointer">Film</li>
+                        <li class="me-3 pointer">Original</li>
+                        <li class="me-3 pointer">Aggiunti di recente</li>
+                        <li class="me-3 pointer">La mia lista</li>
+                    </ul>
                 </div>
+                
             </div>
             <div class="col-6">
                 <div class="container_searchbar_button text-white d-flex align-items-center justify-content-end">
-                    <input class="form-control form-control-lg" type="text" placeholder="Ricerca" id="searchBar" v-model="store.search">
+                    <input class="form-control form-control-lg" type="text" placeholder="Ricerca" id="searchBar" v-model="store.search" @keyup.enter="$emit('perform_Search')">
                     <button type="button" class="btn btn-danger mx-4" @click="$emit('perform_Search')">SEARCH</button>
                 </div>
             </div>
@@ -33,6 +42,12 @@ export default {
 
 header {
     background-color: $black_color;
+
+    .container_title {
+        img {
+            width: 150px;
+        }
+    }
 
     #searchBar {
         width: 400px;
