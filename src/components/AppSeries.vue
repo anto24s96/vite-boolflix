@@ -34,6 +34,10 @@ export default {
         getCover(path) {
             let imgPath = store.posterPath + path
             return imgPath
+        },
+        getVote(vote) {
+            let reviews = vote.toFixed() / 2
+            return reviews
         }
     },
 }
@@ -44,7 +48,13 @@ export default {
         <div>{{ series.name }}</div>
         <div>{{ series.original_name }}</div>
         <img :src="flagUrl" alt="series.original_language">
-        <div>{{ series.vote_average }}</div>
+        <div class="mt-2">
+            <i class="fas fa-star" :class="getVote(series.vote_average) >= 1 ? 'reviewed' : ''"></i>
+            <i class="fas fa-star" :class="getVote(series.vote_average) >= 2 ? 'reviewed' : ''"></i>
+            <i class="fas fa-star" :class="getVote(series.vote_average) >= 3 ? 'reviewed' : ''"></i>
+            <i class="fas fa-star" :class="getVote(series.vote_average) >= 4 ? 'reviewed' : ''"></i>
+            <i class="fas fa-star" :class="getVote(series.vote_average) == 5 ? 'reviewed' : ''"></i>
+        </div>
     </div>
 </template>
 <style lang="">
