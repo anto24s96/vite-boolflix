@@ -38,8 +38,9 @@ export default {
                         <i class="fa-solid fa-bell" id="bell"></i>
                     </div>
 
-                    <div>
+                    <div class="avatar-container">
                         <img :src="store.activeUser" :alt="small-logo" id="small-profile">
+                        <span class="ms-2"><i class="fa-solid fa-caret-down"></i></span>
                     </div>
                 </div>
             </div>
@@ -89,6 +90,12 @@ header {
 
     #small-profile {
         width: 55px;
+    }
+
+    .avatar-container {
+        span {
+            color: grey;
+        }
     }
 }
 </style>

@@ -16,7 +16,7 @@ export default {
 }
 </script>
 <template lang="">
-    <main class="container">
+    <main class="container-fluid pb-5">
         <MoviesContainer></MoviesContainer>
     </main>
 

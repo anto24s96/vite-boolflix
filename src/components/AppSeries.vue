@@ -49,7 +49,7 @@ export default {
 }
 </script>
 <template lang="">
-    <div class="col-6 col-sm-4 col-lg-3">
+    <div class="mx-1">
         <div class="card-container my-3">
             <div class="theCard">
                 <div class="front">
