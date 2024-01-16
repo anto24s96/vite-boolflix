@@ -44,33 +44,33 @@ export default {
 }
 </script>
 <template lang="">
-    <div class="main">
         <Transition>
-            <div v-if="store.flagProfile">
+            <div v-if="store.flagProfile" class="position-absolute overlay">
                 <SelectProfile></SelectProfile>
             </div>
-            <div v-else>
+            <div v-else class="position-relative">
                 <AppHeader @perform_Search="getMoviesandSeries"></AppHeader>   
                 <AppMain></AppMain>             
             </div>
         </Transition>
-    </div>
 </template>
 <style lang="scss">
 @use './styles/generals.scss' as *;
 @use './styles/partials/variables' as *;
 
-.main {
-    height: 100vh;
+.overlay {
+    top: 36%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
-    .v-enter-active,
-    .v-leave-active {
-        transition: opacity 0.6s ease;
-    }
+.v-enter-active,
+.v-leave-active {
+    transition: opacity 0.8s ease;
+}
 
-    .v-enter-from,
-    .v-leave-to {
-        opacity: 0;
-    }
+.v-enter-from,
+.v-leave-to {
+    opacity: 0;
 }
 </style>

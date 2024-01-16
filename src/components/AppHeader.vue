@@ -29,7 +29,10 @@ export default {
             </div>
             <div class="col-6">
                 <div class="container_searchbar_button text-white d-flex align-items-center justify-content-end">
-                    <input class="form-control form-control-md" type="text" placeholder="Ricerca" id="searchBar" v-model="store.search" @keyup.enter="$emit('perform_Search')">
+                    <div class="input-group" id="searchBar">
+                        <span class="input-group-text left-searchbar" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+                        <input type="text" class="form-control right-searchbar" placeholder="Ricerca" v-model="store.search" @keyup.enter="$emit('perform_Search')">
+                    </div>
                     <button type="button" class="btn btn-danger mx-4" @click="$emit('perform_Search')">SEARCH</button>
                 </div>
             </div>
@@ -37,7 +40,6 @@ export default {
     </header>
 </template>
 <style lang="scss" scoped>
-@use '../styles/generals.scss' as *;
 @use '../styles/partials/variables' as *;
 
 header {
@@ -51,6 +53,20 @@ header {
 
     #searchBar {
         width: 280px;
+
+        .left-searchbar {
+            border-right: none;
+            background-color: $black_color;
+
+            i {
+                color: grey;
+            }
+        }
+
+        .right-searchbar {
+            border-left: none;
+            background-color: $black_color;
+        }
     }
 }
 </style>
