@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
+import SelectProfile from './components/SelectProfile.vue';
 
 import { store } from './store';
 
@@ -10,6 +11,7 @@ export default {
     components: {
         AppHeader,
         AppMain,
+        SelectProfile
     },
     data() {
         return {
@@ -42,12 +44,33 @@ export default {
 }
 </script>
 <template lang="">
-    <div>
-        <AppHeader @perform_Search="getMoviesandSeries"></AppHeader>   
-        <AppMain></AppMain>             
+    <div class="main">
+        <Transition>
+            <div v-if="store.flagProfile">
+                <SelectProfile></SelectProfile>
+            </div>
+            <div v-else>
+                <AppHeader @perform_Search="getMoviesandSeries"></AppHeader>   
+                <AppMain></AppMain>             
+            </div>
+        </Transition>
     </div>
 </template>
 <style lang="scss">
 @use './styles/generals.scss' as *;
 @use './styles/partials/variables' as *;
+
+.main {
+    height: 100vh;
+
+    .v-enter-active,
+    .v-leave-active {
+        transition: opacity 0.6s ease;
+    }
+
+    .v-enter-from,
+    .v-leave-to {
+        opacity: 0;
+    }
+}
 </style>

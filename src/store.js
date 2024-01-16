@@ -9,5 +9,25 @@ export const store = reactive({
     search: '',
     posterPath: 'https://image.tmdb.org/t/p/w342',
 
-    founded: false
+    founded: false,
+    flagProfile: true,
+
+    arrProfile: [
+        {
+            name: 'Geralt',
+            img: 'https://i.imgur.com/KclrcPw.png',
+        },
+        {
+            name: 'Yennefer',
+            img: 'https://i.imgur.com/cxjXa7S.png',
+        },
+        {
+            name: 'Tokyo',
+            img: 'https://i.imgur.com/ih6xvXa.png',
+        },
+        {
+            name: 'Billy',
+            img: 'https://i.imgur.com/GqJYXyv.png',
+        }
+    ],
 })
