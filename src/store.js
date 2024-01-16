@@ -11,6 +11,7 @@ export const store = reactive({
 
     founded: false,
     flagProfile: true,
+    activeUser: null,
 
     arrProfile: [
         {

@@ -24,8 +24,8 @@ export default {
             <h2 class="text-center">Chi vuole guardare Netflix?</h2>
             <ul class="d-flex mt-5">
                 <li v-for="item, index in store.arrProfile" :key="index" class="list-unstyled mx-3 pointer" @click="getProfile()">
-                    <img :src="item.img" alt="logo-profile" class="rounded-2">
-                    <div class="text-center mt-1">{{ item.name }}</div>
+                    <img :src="item.img" alt="logo-profile" class="rounded-2" @click="store.item = true; store.activeUser = item.img">
+                    <div class="text-center mt-1 fw-bolder">{{ item.name }}</div>
                 </li>
             </ul>
         </div>
@@ -40,6 +40,10 @@ export default {
 
     img {
         width: 170px;
+
+        &:hover {
+            border: 3px solid grey;
+        }
     }
 }
 

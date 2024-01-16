@@ -31,9 +31,16 @@ export default {
                 <div class="container_searchbar_button text-white d-flex align-items-center justify-content-end">
                     <div class="input-group" id="searchBar">
                         <span class="input-group-text left-searchbar" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
-                        <input type="text" class="form-control right-searchbar" placeholder="Ricerca" v-model="store.search" @keyup.enter="$emit('perform_Search')">
+                        <input type="text" class="form-control right-searchbar text-white" placeholder="Ricerca" v-model="store.search" @keyup.enter="$emit('perform_Search')">
                     </div>
-                    <button type="button" class="btn btn-danger mx-4" @click="$emit('perform_Search')">SEARCH</button>
+                    
+                    <div class="mx-4">
+                        <i class="fa-solid fa-bell" id="bell"></i>
+                    </div>
+
+                    <div>
+                        <img :src="store.activeUser" :alt="small-logo" id="small-profile">
+                    </div>
                 </div>
             </div>
         </div>
@@ -67,6 +74,21 @@ header {
             border-left: none;
             background-color: $black_color;
         }
+
+        .form-control::placeholder {
+            color: grey;
+            opacity: 1;
+        }
+
+    }
+
+    #bell {
+        font-size: 22px;
+        color: grey;
+    }
+
+    #small-profile {
+        width: 55px;
     }
 }
 </style>
